@@ -25,6 +25,20 @@ today_value = None  # 当天指数
 zhishu_code = "1.000001"  # 上证: 1.000001 成指: 0.399001 创业板: 0.399006
 # 其他行业指数数据/code来源: http://quote.eastmoney.com/center/hsbk.html
 ```
+选择一个持仓曲线，默认为直线(也就是在高值和低值之间均匀分布持仓)
+```
+# 确定持仓曲线, 返回闲钱占比
+def get_hold_cangwei(now):
+    # 二值
+    # res = 1 if now > (zhishu_high + zhishu_low) / 2 else 0
+    # 直线
+    res = (1 / (zhishu_high - zhishu_low)) * (now - zhishu_low)
+    # 抛物线
+    # res = ((1 / (zhishu_high - zhishu_low)) * (now - zhishu_low)) ** 7
+    # sqrt曲线
+    # res = (max((1 / (zhishu_high - zhishu_low)) * (now - zhishu_low), 0.0001)) ** 0.5
+    return min(max(res, 0), 1)
+```
 
 运行
 > python3 zhishu.py
