@@ -26,7 +26,7 @@ zhishu_code = "1.000001"  # 上证: 1.000001 成指: 0.399001 创业板: 0.39900
 # 其他行业指数数据/code来源: http://quote.eastmoney.com/center/hsbk.html
 ```
 选择一个持仓曲线，默认为直线(也就是在高值和低值之间均匀分布持仓)
-```
+```python
 # 确定持仓曲线, 返回闲钱占比
 def get_hold_cangwei(now):
     # 二值
