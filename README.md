@@ -34,7 +34,7 @@ def get_hold_cangwei(now):
     # 直线
     res = (1 / (zhishu_high - zhishu_low)) * (now - zhishu_low)
     # 抛物线
-    # res = ((1 / (zhishu_high - zhishu_low)) * (now - zhishu_low)) ** 7
+    # res = ((1 / (zhishu_high - zhishu_low)) * (now - zhishu_low)) ** 2
     # sqrt曲线
     # res = (max((1 / (zhishu_high - zhishu_low)) * (now - zhishu_low), 0.0001)) ** 0.5
     return min(max(res, 0), 1)
