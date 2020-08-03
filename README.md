@@ -49,6 +49,11 @@ def get_hold_cangwei(now):
 网页访问
 > http://localhost/zhishu.html
 
+调试技巧
+- 修改参数
+- 重新运行
+- command + shift + r 刷新缓存刷新页面
+
 效果如下
 ![trace](./static/trace.jpg)
 
